@@ -1,4 +1,4 @@
-# 🏥 Hospital Management System – SQL Database 
+#  Hospital Management System – SQL Database 
 
 This task is part of my SQL Developer Internship. It demonstrates how to design a relational database using MySQL Workbench for a Hospital Management System with 4 core entities.
 
@@ -62,10 +62,8 @@ This database simulates the workflow of a hospital by managing:
 ##  Sample Queries
 
 ```sql
--- View all patients
 SELECT * FROM Patients;
 
--- List appointments with patient and doctor names
 SELECT 
     a.appointment_id,
     p.full_name AS patient_name,
