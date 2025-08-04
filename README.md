@@ -49,13 +49,8 @@ This database simulates the workflow of a hospital by managing:
 
 ---
 
-##  Repository Contents
-
-| File Name            | Description                              |
-|---------------------|------------------------------------------|
-| `hospital_schema.sql` | SQL script with schema + sample data     |
-| `ER_diagram.png`     | Visual diagram of the database structure |
-| `README.md`          | Project overview and documentation       |
+##  ER Diagram
+<img width="1536" height="1024" alt="er_diagram" src="https://github.com/user-attachments/assets/884791e9-20a7-4c53-9fdb-7d4cf403c9b3" />
 
 ---
 
@@ -63,17 +58,11 @@ This database simulates the workflow of a hospital by managing:
 
 ```sql
 SELECT * FROM Patients;
+SELECT * FROM Doctors;
+SELECT * FROM Departments;
+SELECT * FROM Appointments;
 
-SELECT 
-    a.appointment_id,
-    p.full_name AS patient_name,
-    d.full_name AS doctor_name,
-    a.appointment_date,
-    a.reason
-FROM Appointments a
-JOIN Patients p ON a.patient_id = p.patient_id
-JOIN Doctors d ON a.doctor_id = d.doctor_id;
-
-##  ER Diagram
-<img width="1536" height="1024" alt="er_diagram" src="https://github.com/user-attachments/assets/884791e9-20a7-4c53-9fdb-7d4cf403c9b3" />
+SELECT doctor_id, COUNT(*) AS total_appointments
+FROM Appointments
+GROUP BY doctor_id;
 
