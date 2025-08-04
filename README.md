@@ -75,3 +75,7 @@ SELECT
 FROM Appointments a
 JOIN Patients p ON a.patient_id = p.patient_id
 JOIN Doctors d ON a.doctor_id = d.doctor_id;
+
+##  ER Diagram
+<img width="1536" height="1024" alt="er_diagram" src="https://github.com/user-attachments/assets/884791e9-20a7-4c53-9fdb-7d4cf403c9b3" />
+
